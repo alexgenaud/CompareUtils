@@ -1,4 +1,5 @@
 plugins {
+    id 'com.adarshr.test-logger' version '3.2.0'
     id 'application'
 }
 
@@ -21,4 +22,26 @@ testing {
 
 application {
     mainClass = 'net.genaud.compareutils.App'
+}
+
+test {
+    testlogger {
+        theme 'mocha'
+        showExceptions true
+        showStackTraces false
+        showFullStackTraces false
+        showCauses true
+        slowThreshold 2000
+        showSummary true
+        showSimpleNames false
+        showPassed true
+        showSkipped true
+        showFailed true
+        showOnlySlow false
+        showStandardStreams true
+        showPassedStandardStreams true
+        showSkippedStandardStreams true
+        showFailedStandardStreams true
+        logLevel 'lifecycle'
+    }
 }
